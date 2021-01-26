@@ -1,0 +1,21 @@
+name: frases-do-dia
+version: 0.1.0
+summary: Frases do Dia App
+description: App Frases do Dia by Luan Campos
+
+confinement: strict
+base: core18
+grade: stable
+
+apps:
+  super-cool-app:
+    command: super_cool_app
+    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
+    plugs:
+      - network
+
+parts:
+  super-cool-app:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application
